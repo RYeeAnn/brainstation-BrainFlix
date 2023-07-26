@@ -1,0 +1,51 @@
+@use '../../partials/variables.scss' as *;
+
+.main {
+    background-color: $White;
+    padding: 1rem;
+
+    &__title {
+        color: $BrainFlix-Black;
+        line-height: 2rem;
+        word-spacing: 0.2rem;
+        border-bottom: 2px solid $Mercury;
+        padding-bottom: 1rem;
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid $Mercury;
+        padding-bottom: 1rem;
+    }
+
+    &__item {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        gap: 1rem;
+        color: $Silver;
+
+        &--channel {
+            color: $BrainFlix-Black;
+            font-weight: 600;
+        }
+
+        &--views img {
+            margin-right: 10px;
+        }
+
+        &--likes img {
+            margin-right: 10px;
+        }
+    }
+
+    &__description {
+        color: $BrainFlix-Black;
+        font-size: 16px;
+        line-height: 1.2rem;
+        word-spacing: 6px;
+    }
+}

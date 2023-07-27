@@ -12,6 +12,14 @@
         padding-bottom: 1rem;
     }
 
+    &__video {
+
+
+        &--poster {
+            width: 100%;
+        }
+    }
+
     &__info {
         display: flex;
         justify-content: space-between;

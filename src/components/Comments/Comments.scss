@@ -1,0 +1,17 @@
+@use '../../partials/variables.scss';
+
+.comments {
+
+    &__row {
+    }
+
+    &__image {
+        width: 55px;
+        height: 50px;
+        border-radius: 100%;
+    }
+}
+
+.comments__name {
+    color: black;
+}

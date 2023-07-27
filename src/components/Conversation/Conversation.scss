@@ -1,0 +1,52 @@
+@use '../../partials/variables.scss' as *;
+
+.conversation {
+
+    text-align: center;
+
+    &__title {
+        color: $Silver;
+        padding-bottom: 8px;
+        padding-left: 50px;
+    }
+
+    &__image {
+        width: 55px;
+        height: 50px;
+        border-radius: 100%;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    &__text {
+        padding: 12px;
+
+        &::placeholder {
+            color: $BrainFlix-Black;
+        }
+    }
+
+    &__button {
+
+        padding-top: 1rem;
+        padding-left: 72px;
+        
+        &--upload {
+            color: $White;
+            font-weight: 600;
+            font-size: 0.9rem;
+            background-color: $BrainFlix-Blue;
+            background-image: url(../../assets/Icons/upload.svg);
+            background-repeat: no-repeat;
+            background-position: left 10px center;
+            border-style: hidden;
+            width: 88%;
+            padding: 1rem 0.5rem 1rem 0.5rem;
+            border-radius: 4px;
+        }
+    }
+}

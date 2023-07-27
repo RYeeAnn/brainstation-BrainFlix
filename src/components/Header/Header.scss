@@ -28,11 +28,8 @@
         border: 1px solid silver;
         border-radius: 4px;
         padding: 12px;
+        padding-left: 2.5rem;
         width: 200px;
-
-        &::placeholder {
-            text-indent: 24px;
-        }
     }
 
     &__image {
@@ -42,10 +39,10 @@
     }
 }
 
-.button {
+.search__button {
     padding-top: 1rem;
 
-    &__upload {
+    &--upload {
         color: $White;
         font-weight: 600;
         font-size: 0.9rem;

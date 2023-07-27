@@ -10,10 +10,10 @@ function Header () {
             </div>
                 <div className="search">
                     <input type="Search" placeholder="Search" className="search__input"/>
-                    <img className='search__image' src={Image} alt="image" />
+                    <img className='search__image' src={Image} alt="Mohan-muruge" />
                 </div>
-                    <div className="button">
-                        <button className="button__upload">
+                    <div className="search__button">
+                        <button className="search__button--upload">
                             UPLOAD
                         </button>
                     </div>

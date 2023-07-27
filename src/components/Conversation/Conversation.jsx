@@ -9,7 +9,7 @@ function Conversation () {
             </div>
             <div className="conversation__container">
                 <img src={Image} alt="" className="conversation__image" />
-                <textarea name="conversation" id="" cols="23" rows="5" placeholder='Add a new comment' className="conversation__text"></textarea>
+                <textarea name="conversation" id="" cols="25" rows="5" placeholder='Add a new comment' className="conversation__text"></textarea>
             </div>
                     <div className="conversation__button">
                         <button className="conversation__button--upload">

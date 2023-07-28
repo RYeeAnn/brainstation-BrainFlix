@@ -1,6 +1,5 @@
 import './Comments.scss';
 import videoDetails from '../../assets/Data/video-details.json';
-import Image from '../../assets/Images/Mohan-muruge.jpg';
 
 const selectedComment = videoDetails[0]
 

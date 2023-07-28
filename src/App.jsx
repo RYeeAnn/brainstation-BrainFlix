@@ -5,9 +5,10 @@ import videoDetails from './assets/Data/video-details.json';
 import Main from './components/Main/Main';
 import Conversation from './components/Conversation/Conversation';
 import Comments from './components/Comments/Comments';
+import Videos from './components/Videos/Videos';
 
-console.log(videos)
-console.log(videoDetails)
+// console.log(videos)
+// console.log(videoDetails)
 
 
 function App () {
@@ -17,6 +18,7 @@ function App () {
     <Main/>
     <Conversation/>
     <Comments/>
+    <Videos/>
     </>
 
   )

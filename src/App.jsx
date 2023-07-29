@@ -6,22 +6,54 @@ import Main from './components/Main/Main';
 import Conversation from './components/Conversation/Conversation';
 import Comments from './components/Comments/Comments';
 import Videos from './components/Videos/Videos';
-
-// console.log(videos)
-// console.log(videoDetails)
+import { useState } from 'react';
 
 
-function App () {
+function App() {
+  const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]);
+
+  function clickHandler(videoId) {
+    const video = videoDetails.find((video) => video.id === videoId);
+    setSelectedVideo(video);
+  }
+
   return (
     <>
-    <Header/>
-    <Main/>
-    <Conversation/>
-    <Comments/>
-    <Videos/>
+      <Header />
+      <Main selectedVideo={selectedVideo} />
+      <Conversation />
+      <Comments selectedVideo={selectedVideo.comments} />
+      <Videos selectedVideo={selectedVideo} clickHandler={clickHandler} />
     </>
-
-  )
+  );
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

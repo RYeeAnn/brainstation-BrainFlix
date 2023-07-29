@@ -3,9 +3,9 @@ import videoDetails from '../../assets/Data/video-details.json';
 import viewsLogo from '../../assets/Icons/views.svg';
 import likesLogo from '../../assets/Icons/likes.svg';
 
-const selectedVideo = videoDetails[0]
+// const selectedVideo = videoDetails[0]
 
-function Main () {
+function Main ({selectedVideo}) {
     return (
     <>
     <section className='main'>

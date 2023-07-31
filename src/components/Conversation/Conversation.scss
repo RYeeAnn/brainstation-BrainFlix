@@ -5,6 +5,10 @@
 
     text-align: center;
 
+    @include desktop {
+        width: 770px;
+    }
+
     &__comments {
         display: flex;
         justify-content: center;
@@ -45,6 +49,10 @@
             display: flex;
             justify-content: center;
         }
+
+        @include desktop {
+            padding-left: 15rem;
+        }
     }
 
     &__text {
@@ -52,7 +60,11 @@
 
         @include tablet {
             width: 325px;
-            height: 21px;
+            height: 15px;
+        }
+
+        @include desktop {
+            width: 570px;
         }
 
         &::placeholder {
@@ -82,8 +94,12 @@
             background-position: left 10px center;
             border-style: hidden;
             width: 234px;
-            padding: 1rem 0.5rem 1rem 0.5rem;
             border-radius: 4px;
+            height: 40px;
+
+            &:hover {
+                background-color: $BrainFlix-DarkBlue;
+            }
         }
     }
 }

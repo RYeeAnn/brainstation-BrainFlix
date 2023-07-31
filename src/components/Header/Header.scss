@@ -23,7 +23,8 @@
     }
 
     &__title {
-        width: 150px;
+        width: 125px;
+        height: 25px;
     }
 }
 
@@ -85,8 +86,11 @@
         background-position: left 10px center;
         border-style: hidden;
         width: 288px;
-        padding: 1rem 0.5rem 1rem 0.5rem;
         border-radius: 4px;
+        height: 40px;
+        &:hover {
+            background-color: $BrainFlix-DarkBlue;
+        }
 
         @include tablet {
             width: 170px;

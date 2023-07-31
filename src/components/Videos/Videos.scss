@@ -8,6 +8,13 @@
         padding-right: 2rem;
     }
 
+    @include desktop {
+        position: absolute;
+        right: 6rem;
+        top: 33.1rem;
+        border-left: 2px solid $Mercury;
+    }
+
     &__row {
         display: flex;
         padding-left: 16px;
@@ -20,6 +27,9 @@
         height: 80px;
         border-radius: 4px;
         background-color: $Mercury;
+        &:hover {
+            opacity: 0.5;
+        }
     }
 
     &__title {

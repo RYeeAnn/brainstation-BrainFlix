@@ -1,46 +1,78 @@
 @use '../../partials/variables.scss' as *;
+@use '../../partials/mixins.scss' as *;
 
 .header-container {
     text-align: center;
-    font-size: 0.8rem;
+
+    @include tablet {
+        display: flex;
+        padding-top: 1rem;
+        justify-content: center;
+    }
 }
 
 .header {
     padding: 1rem;
 
+    @include tablet {
+        padding-right: 4rem;
+    }
+
+    @include desktop {
+        padding-right: 35rem;
+    }
+
     &__title {
-        width: 50%;
+        width: 150px;
     }
 }
 
 .search {
     
-    background-color: #ffffff;
+    background-color: $White;
     position: relative;
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.7rem;
 
     &__input {
         background-image: url('../../assets/Icons/search.svg');
         background-repeat: no-repeat;
         background-position: left 10px center;
-        border: 1px solid silver;
+        border: 1px solid $Mercury;
         border-radius: 4px;
         padding: 12px;
         padding-left: 2.5rem;
         width: 200px;
+        background-color: $Alabaster;
+
+        @include tablet {
+            height: 40px;
+            margin-top: 12px;
+            width: 240px;
+        }
     }
 
     &__image {
         width: 45px;
         height: 40px;
         border-radius: 100%;
+
+        @include tablet {
+            position: absolute;
+            left: 460px;
+            top: 12px;
+        }
     }
 }
 
 .search__button {
     padding-top: 1rem;
+
+    @include tablet {
+        padding-top: 12px;
+        padding-right: 5rem;
+    }
 
     &--upload {
         color: $White;
@@ -51,8 +83,16 @@
         background-repeat: no-repeat;
         background-position: left 10px center;
         border-style: hidden;
-        width: 90%;
+        width: 288px;
         padding: 1rem 0.5rem 1rem 0.5rem;
         border-radius: 4px;
+
+        @include tablet {
+            width: 170px;
+            height: 40px;
+            padding: 10px;
+            padding-left: 1.5rem;
+            margin-left: 2rem;
+        }
     }
 }

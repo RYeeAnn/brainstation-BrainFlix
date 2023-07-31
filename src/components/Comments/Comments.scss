@@ -1,6 +1,12 @@
 @use '../../partials/variables.scss' as *;
+@use '../../partials/mixins.scss' as *;
 
 .comments {
+
+    @include tablet {
+        padding: 2rem;
+        padding-bottom: 0;
+    }
 
     &__container {
         margin-left: 1rem;
@@ -9,13 +15,19 @@
 
     &__row {
         display: flex;
-        justify-content: space-around;
-        align-items: center;
+        justify-content: center;
         padding-top: 2rem;
         font-size: 12px;
         gap: 26px;
+        border-bottom: 1px solid $Silver;
+        max-width: 300px;
+        margin: 0 auto; // note : I did this to keep the row centered horizontally
 
-        &--first {
+        @include tablet {
+            max-width: 600px;
+        }
+
+        &:first-child {
             border-top: 1px solid $Silver;
         }
     }
@@ -24,12 +36,39 @@
         width: 45px;
         height: 40px;
         border-radius: 100%;
-        background-color: $Silver;
+        background-color: $Mercury;
+        flex-shrink: 0; 
+        overflow: hidden;
+        margin-bottom: 104px;
+
+        @include tablet {
+            margin-bottom: 50px;
+        }
+      }
+
+    &__name {
+        font-weight: 600;
     }
+
+    &__date {
+        color: $Silver;
+    }
+
+
+    &__namedate {
+        display: flex;
+        justify-content: space-between;
+    }
+
 
     &__text {
         padding-top: 1rem;
-        border-bottom: 1px solid $Silver;
         padding-bottom: 1.5rem;
+        line-height: 18px;
+        width: 155px;
+
+        @include tablet {
+            width: 520px;
+        }
     }
 }

@@ -1,19 +1,31 @@
 @use '../../partials/variables.scss' as *;
+@use '../../partials/mixins.scss' as *;
 
 .videos {
 
+    @include tablet {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
     &__row {
         display: flex;
-        padding-bottom: 1rem;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 0.8rem;
     }
 
     &__image {
-        width: 30%;
-        border-radius: 6px;
+        width: 100px;
+        height: 80px;
+        border-radius: 4px;
+        background-color: $Mercury;
     }
 
     &__title {
         font-weight: 600;
+        font-size: 12px;
+        width: 140px;
     }
 
     &__info {
@@ -22,6 +34,7 @@
 
     &__channel {
         padding-top: 1rem;
+        font-size: 12px;
     }
 
     &__header {
@@ -30,5 +43,11 @@
         color: $Silver;
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
+
+        @include tablet {
+            display: flex;
+            justify-content: start;
+            padding-left: 16px;
+        }
     }
 }

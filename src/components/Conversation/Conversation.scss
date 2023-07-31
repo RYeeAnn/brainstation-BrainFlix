@@ -1,13 +1,30 @@
 @use '../../partials/variables.scss' as *;
+@use '../../partials/mixins.scss' as *;
 
 .conversation {
 
     text-align: center;
 
+    &__comments {
+        display: flex;
+        justify-content: center;
+        padding-right: 11.5rem;
+        padding-bottom: 1.5rem;
+        font-weight: 600;
+
+        @include tablet {
+            padding-right: 575px;
+        }
+    }
+
     &__title {
         color: $Silver;
         padding-bottom: 8px;
-        padding-left: 50px;
+        padding-left: 24px;
+
+        @include tablet {
+            padding-right: 380px;
+        }
     }
 
     &__image {
@@ -22,8 +39,21 @@
         gap: 1rem;
     }
 
+    &__container-button {
+
+        @include tablet {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
     &__text {
         padding: 12px;
+
+        @include tablet {
+            width: 325px;
+            height: 21px;
+        }
 
         &::placeholder {
             color: $BrainFlix-Black;
@@ -33,8 +63,14 @@
     &__button {
 
         padding-top: 1rem;
-        padding-left: 72px;
+        padding-left: 62px;
         padding-bottom: 1.5rem;
+
+        @include tablet {
+            padding: 0;
+            padding-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
         
         &--upload {
             color: $White;
@@ -45,7 +81,7 @@
             background-repeat: no-repeat;
             background-position: left 10px center;
             border-style: hidden;
-            width: 88%;
+            width: 234px;
             padding: 1rem 0.5rem 1rem 0.5rem;
             border-radius: 4px;
         }

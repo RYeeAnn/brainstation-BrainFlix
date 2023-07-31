@@ -1,8 +1,23 @@
 @use '../../partials/variables.scss' as *;
+@use '../../partials/mixins.scss' as *;
 
 .main {
     background-color: $White;
-    padding: 1rem;
+
+    &__container {
+        padding: 1rem;
+        padding-top: 0;
+
+        @include tablet {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+
+        @include desktop {
+            padding-left: 8rem;
+            padding-right: 8rem;
+        }
+    }
 
     &__title {
         color: $BrainFlix-Black;
@@ -10,6 +25,10 @@
         word-spacing: 0.2rem;
         border-bottom: 2px solid $Mercury;
         padding-bottom: 1rem;
+
+        @include tablet {
+            border-bottom: $White;
+        }
     }
 
     &__video {
@@ -17,6 +36,7 @@
 
         &--poster {
             width: 100%;
+            padding-top: 1rem;
         }
     }
 
@@ -35,6 +55,10 @@
         margin: 0;
         gap: 1rem;
         color: $Silver;
+
+        @include tablet {
+            flex-direction: row;
+        }
 
         &--channel {
             color: $BrainFlix-Black;

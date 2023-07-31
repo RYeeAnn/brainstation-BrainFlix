@@ -22,7 +22,7 @@ function App() {
       <Header />
       <Main selectedVideo={selectedVideo} />
       <Conversation />
-      <Comments selectedVideo={selectedVideo.comments} />
+      <Comments selectedVideo={selectedVideo} />
       <Videos selectedVideo={selectedVideo} clickHandler={clickHandler} />
     </>
   );

@@ -1,6 +1,5 @@
 import './Comments.scss';
 import React, { useState, useEffect } from 'react';
-import videoDetails from '../../assets/Data/video-details.json';
 
 function Comments({ selectedVideo }) {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -26,7 +25,7 @@ function Comments({ selectedVideo }) {
       } else if (timeDifference < 1000 * 60 * 60 * 24) {
         return `${Math.floor(timeDifference / (1000 * 60 * 60))} hours ago`;
       } else {
-        return commentDate.toLocaleDateString(); // Use toLocaleDateString instead of toLocaleString
+        return commentDate.toLocaleDateString();
       }
     } catch (error) {
       console.error('Error parsing the comment timestamp:', error);

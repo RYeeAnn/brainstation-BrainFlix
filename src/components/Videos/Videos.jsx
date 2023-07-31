@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 import './Videos.scss';
 import videoDetails from '../../assets/Data/video-details.json';
 

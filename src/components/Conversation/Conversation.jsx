@@ -1,11 +1,11 @@
 import './Conversation.scss'
 import Image from '../../assets/Images/Mohan-muruge.jpg';
 
-function Conversation () {
+function Conversation ({selectedVideo}) {
     return (
         <section className="conversation">
             <div className="conversation__comments">
-                3 Comments
+            {selectedVideo.comments.length} Comment{selectedVideo.comments.length !== 1 ? 's' : ''}
             </div>
             <div className="conversation__title">
                 JOIN THE CONVERSATION

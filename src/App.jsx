@@ -6,23 +6,21 @@ import Conversation from './components/Conversation/Conversation';
 import Comments from './components/Comments/Comments';
 import Videos from './components/Videos/Videos';
 import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import VideoUploadPage from './pages/VideoUploadPage';
 
 
 function App() {
-  const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]);
-
-  function clickHandler(videoId) {
-    const video = videoDetails.find((video) => video.id === videoId);
-    setSelectedVideo(video);
-  }
 
   return (
     <>
-      <Header />
-      <Main selectedVideo={selectedVideo} />
-      <Conversation selectedVideo={selectedVideo} />
-      <Comments selectedVideo={selectedVideo} />
-      <Videos selectedVideo={selectedVideo} clickHandler={clickHandler} />
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/upload" element={<VideoUploadPage />} />
+    </Routes>
+    </BrowserRouter>
     </>
   );
 }

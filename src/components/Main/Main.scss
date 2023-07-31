@@ -33,10 +33,27 @@
 
     &__video {
 
+        @include tablet {
+            background-color: $BrainFlix-DarkBlack;
+        }
 
         &--poster {
             width: 100%;
-            padding-top: 1rem;
+        }
+
+        video {
+
+            @include tablet {
+                max-width: 700px;
+                display: flex;
+                margin: 0 auto; 
+            }
+
+            @include desktop {
+                max-width: 800px;
+                display: flex;
+                margin: 0 auto; 
+            }
         }
     }
 

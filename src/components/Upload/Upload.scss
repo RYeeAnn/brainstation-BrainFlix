@@ -1,15 +1,28 @@
 @use '../../partials/variables.scss' as *;
+@use '../../partials/mixins.scss' as *;
 
 .upload {
     
     border-top: 2px solid $Mercury;
 
-    padding: 1rem;
+    &__container {
+        padding: 1rem;
+
+        @include desktop {
+            padding-left: 8rem;
+            padding-right: 8rem;
+        }
+    }
 
     &__video {
 
         &--poster {
-            width: 100%;
+            max-width: 100%;
+            height: auto;
+
+            @include tablet {
+                width: 350px;
+            }
         }
     }
 
@@ -17,6 +30,13 @@
         font-weight: 600;
         font-size: 24px;
         padding-bottom: 1.5rem;
+
+        @include tablet {
+            font-size: 1.6rem;
+            padding-top: 1rem;
+            font-weight: 700;
+            border-bottom: 2px solid $Mercury;
+        }
     }
 
     &__thumbnailTitle {
@@ -24,32 +44,153 @@
         font-weight: 600;
         color: $Silver;
         padding-bottom: 6px;
+
+        @include tablet {
+            padding-top: 1.5rem;
+        }
     }
 
-    &__inputTitle {
+    &__thumbnail {
+
+        @include desktop {
+            border-bottom: 2px solid $Mercury;
+            padding-bottom: 1.5rem;
+        }
+    }
+}
+
+.uploadText {
+
+    text-align: center;
+
+    @include desktop {
+        padding-left: 7rem;
+        padding-right: 7rem;
+    }
+
+    &__title {
         font-size: 14px;
         font-weight: 600;
         color: $Silver;
         padding-bottom: 6px;
+        padding-top: 1rem;
+        padding-right: 98px;
+
+        @include tablet {
+            display: flex;
+        }
+    }
+
+    &__title1 {
+        padding-right: 160px;
     }
 
     &__input {
         width: 276px;
-        padding-left: 8px;
-        padding-top: 8px;
+        padding-left: 10px;
+        padding-top: 10px;
         padding-bottom: 8px;
-    }
+        border: 1px solid $Mercury;
+        border-radius: 4px;
+        background-color: $Alabaster;
 
-    &__textareaTitle {
-        padding-top: 1rem;
-        font-size: 14px;
-        font-weight: 600;
-        color: $Silver;
-        padding-bottom: 6px;
+        @include tablet {
+            width: 98.4%;
+        }
+
+        @include desktop {
+            width: 271.5%;
+        }
     }
 
     &__textarea {
         width: 278px;
-        padding-left: 8px;
+        height: 100px;
+        padding-left: 10px;
+        padding-top: 10px;
+        border: 1px solid $Mercury;
+        border-radius: 4px;
+        background-color: $Alabaster;
+
+        @include tablet {
+            width: 98.4%;
+        }
+
+        @include desktop {
+            width: 271.5%;
+        }
+    }
+
+    &__container {
+
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            border-bottom: 2px solid $Mercury;
+            padding-bottom: 1.5rem;
+        }
+
+        @include desktop {
+            position: absolute;
+            left: 500px;
+            bottom: 179px;
+            border-bottom: none;
+        }
     }
 }
+
+.uploadButton {
+
+    @include tablet {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 4rem;
+        margin-right: 2px;
+    }
+
+    @include desktop {
+        padding-right: 0.7rem;
+        margin-left: 16px;
+    }
+
+    &__publish {
+        padding-top: 1.5rem;
+    }
+
+    &__publishBtn {
+        color: $White;
+        font-weight: 600;
+        font-size: 0.9rem;
+        background-color: $BrainFlix-Blue;
+        background-image: url(../../assets/Icons/upload.svg);
+        background-repeat: no-repeat;
+        background-position: left 10px center;
+        border-style: hidden;
+        width: 288px;
+        border-radius: 4px;
+        height: 40px;
+        &:hover {
+            background-color: $BrainFlix-DarkBlue;
+        }
+    }
+
+    &__cancel {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+    }
+
+    &__cancelBtn {
+        border-style: none;
+        background-color: $White;
+        color: $BrainFlix-Blue;
+        font-weight: 600;
+    }
+}
+
+::placeholder {
+    color: $BrainFlix-Black;
+}
+
+

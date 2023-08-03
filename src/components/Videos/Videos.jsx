@@ -38,7 +38,7 @@ function Video({ id, title, channel, image, clickHandler }) {
                 title={video.title}
                 channel={video.channel}
                 image={video.image}
-                clickHandler={clickHandler}
+                // clickHandler={clickHandler}
               />
             )}
           </div>

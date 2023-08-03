@@ -2,6 +2,8 @@ import './Main.scss'
 import viewsLogo from '../../assets/Icons/views.svg';
 import likesLogo from '../../assets/Icons/likes.svg';
 
+const api_key = '?api_key=b500e183-5e41-4884-ad8e-f7190a88b1c8';
+
 
 function Main ({selectedVideo}) {
 
@@ -20,7 +22,7 @@ function Main ({selectedVideo}) {
 
         <div className="main__video">
             {/* <img className='main__video--img' src="https://i.imgur.com/l2Xfgpl.jpg" alt="" /> */}
-            <video controls className='main__video--poster' src={selectedVideo.video} poster={selectedVideo.image}></video>
+            <video controls className='main__video--poster' src={`${selectedVideo.video}${api_key}`} poster={selectedVideo.image}></video>
         </div>
 
         <div className="main__container">

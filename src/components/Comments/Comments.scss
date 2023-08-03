@@ -13,7 +13,7 @@
         margin-right: 1rem;
 
         @include desktop {
-            width: 950px;
+            margin-right: 410px;
         }
     }
 
@@ -24,15 +24,15 @@
         font-size: 12px;
         gap: 26px;
         border-bottom: 1px solid $Silver;
-        max-width: 600px;
+        // max-width: 800px;
         margin: 0 auto; // note : I did this to keep the row centered horizontally
 
         @include tablet {
-            max-width: 600px;
+            // max-width: 600px;
         }
 
         @include desktop {
-            max-width: 1200px;
+
         }
 
         &:first-child {
@@ -61,17 +61,12 @@
 
     &__date {
         color: $Silver;
-
-        @include desktop {
-            padding-right: 1rem;
-        }
     }
 
 
     &__namedate {
         display: flex;
         justify-content: space-between;
-        gap: 5rem;
     }
 
 

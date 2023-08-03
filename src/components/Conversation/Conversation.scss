@@ -6,7 +6,7 @@
     text-align: center;
 
     @include desktop {
-        width: 770px;
+        margin-right: 625px;
     }
 
     &__comments {
@@ -64,7 +64,7 @@
         }
 
         @include desktop {
-            width: 570px;
+            width: 530px;
         }
 
         &::placeholder {

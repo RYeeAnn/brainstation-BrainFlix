@@ -36,7 +36,7 @@ function Comments({ selectedVideo }) {
   return (
     <section className="comments">
       <div className="comments__container">
-        {selectedVideo.comments.map((comment) => (
+        {selectedVideo.comments?.map((comment) => (
           <div key={comment.id} className="comments__row">
             <div className="comments__image" />
             <div className="comments__items">

@@ -1,33 +1,22 @@
-// b500e183-5e41-4884-ad8e-f7190a88b1c8
-
-import './App.scss';
-import Header from './components/Header/Header';
-import videoDetails from './assets/Data/video-details.json';
-import Main from './components/Main/Main';
-import Conversation from './components/Conversation/Conversation';
-import Comments from './components/Comments/Comments';
-import Videos from './components/Videos/Videos';
-import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import VideoUploadPage from './pages/VideoUploadPage';
 
-
 function App() {
-
   return (
-    <>
-    <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/upload" element={<VideoUploadPage />} />
-    </Routes>
-    </BrowserRouter>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/videos/:id" element={<HomePage />} />
+        <Route path="/upload" element={<VideoUploadPage />} />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+
 
 
 

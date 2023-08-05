@@ -2,20 +2,18 @@
 @use '../../partials/mixins.scss' as *;
 
 .upload {
-    
     border-top: 2px solid $Mercury;
 
-    &__container {
-        padding: 1rem;
+    @include desktop {
+        border-top: none;
+    }
 
-        @include desktop {
-            padding-left: 8rem;
-            padding-right: 8rem;
-        }
+    &__container {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 
     &__video {
-
         &--poster {
             max-width: 100%;
             height: auto;
@@ -37,6 +35,11 @@
             font-weight: 700;
             border-bottom: 2px solid $Mercury;
         }
+
+        @include desktop {
+            margin-top: 8px;
+            margin-right: -2rem;
+        }
     }
 
     &__thumbnailTitle {
@@ -48,24 +51,56 @@
         @include tablet {
             padding-top: 1.5rem;
         }
+
+        @include desktop {
+            padding-top: 1.5rem;
+            margin-top: 0.4rem;
+        }
     }
 
     &__thumbnail {
+        @include desktop {
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    &__twoContainers {
+
+        @include tablet {
+            padding: 2rem;
+            padding-top: 0;
+        }
+
 
         @include desktop {
+            display: flex;
+            padding: 0;
+            margin-right: 170px;
+            margin-left: 170px;
             border-bottom: 2px solid $Mercury;
-            padding-bottom: 1.5rem;
+        }
+    }
+
+    &__sectionContent {
+        @include desktop {
+            flex: 1; /* Let the content expand to fill the available space */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the content vertically */
         }
     }
 }
 
 .uploadText {
-
     text-align: center;
 
     @include desktop {
-        padding-left: 7rem;
-        padding-right: 7rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1; /* Let the container expand to fill the available space */
+        justify-content: center; /* Center the content vertically */
+        padding-top: 94.6px;
+        padding-left: 2rem;
     }
 
     &__title {
@@ -73,7 +108,7 @@
         font-weight: 600;
         color: $Silver;
         padding-bottom: 6px;
-        padding-top: 1rem;
+        padding-top: 2rem;
         padding-right: 98px;
 
         @include tablet {
@@ -83,6 +118,10 @@
 
     &__title1 {
         padding-right: 160px;
+
+        @include desktop {
+            border-top: 2px solid $Mercury;
+        }
     }
 
     &__input {
@@ -96,10 +135,6 @@
 
         @include tablet {
             width: 98.4%;
-        }
-
-        @include desktop {
-            width: 271.5%;
         }
     }
 
@@ -117,39 +152,37 @@
         }
 
         @include desktop {
-            width: 271.5%;
+            margin-right: 30rem;
         }
     }
 
     &__container {
-
         @include tablet {
             display: flex;
             flex-direction: column;
-            margin-left: 1rem;
-            margin-right: 1rem;
             border-bottom: 2px solid $Mercury;
-            padding-bottom: 1.5rem;
+            padding-bottom: 3rem;
         }
 
         @include desktop {
-            position: absolute;
             border-bottom: none;
         }
     }
 }
 
 .uploadButton {
+    text-align: center;
 
     @include tablet {
         display: flex;
         flex-direction: row-reverse;
         gap: 4rem;
         margin-right: 2px;
+        padding-right: 28px;
     }
 
     @include desktop {
-        padding-right: 0.7rem;
+        padding-right: 165px;
         margin-left: 16px;
     }
 
@@ -190,5 +223,6 @@
 ::placeholder {
     color: $BrainFlix-Black;
 }
+
 
 

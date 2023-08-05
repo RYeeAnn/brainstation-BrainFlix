@@ -9,6 +9,10 @@
         padding-top: 1rem;
         justify-content: center;
     }
+
+    @include desktop {
+        border-bottom: 2px solid $Mercury;
+    }
 }
 
 .header {

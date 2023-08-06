@@ -44,14 +44,14 @@
 
             @include tablet {
                 max-width: 700px;
-                height: 385px;
+                height: 391px;
                 display: flex;
                 margin: 0 auto; 
             }
 
             @include desktop {
-                max-width: 800px;
-                height: 440px;
+                max-width: 895px;
+                height: 500px;
                 display: flex;
                 margin: 0 auto; 
             }
@@ -99,7 +99,7 @@
     &__description {
         color: $BrainFlix-Black;
         font-size: 16px;
-        line-height: 1.2rem;
-        word-spacing: 6px;
+        line-height: 1.3rem;
+        word-spacing: 2px;
     }
 }

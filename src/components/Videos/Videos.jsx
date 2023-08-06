@@ -39,6 +39,14 @@ function Videos({ selectedVideo }) {
     });
   }
 
+  useEffect(() => {
+    // Scroll to the top when selectedVideo changes
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  }, [selectedVideo]);
+
   return (
     <section className="videos">
       <div className="videos__container">

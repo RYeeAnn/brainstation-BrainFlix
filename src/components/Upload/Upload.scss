@@ -9,7 +9,8 @@
     }
 
     &__container {
-        padding: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 
     &__video {
@@ -226,4 +227,3 @@
 ::placeholder {
     color: $BrainFlix-Black;
 }
-

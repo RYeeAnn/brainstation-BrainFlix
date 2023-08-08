@@ -9,8 +9,7 @@
     }
 
     &__container {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding: 1rem;
     }
 
     &__video {
@@ -160,6 +159,7 @@
     }
 
     &__container {
+        
         @include tablet {
             display: flex;
             flex-direction: column;

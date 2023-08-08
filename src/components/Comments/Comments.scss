@@ -23,7 +23,7 @@
         padding-top: 2rem;
         font-size: 12px;
         gap: 26px;
-        border-bottom: 1px solid $Silver;
+        border-top: 1px solid $Silver;
         // max-width: 800px;
         margin: 0 auto; // note : I did this to keep the row centered horizontally
 
@@ -32,7 +32,6 @@
         }
 
         @include desktop {
-
         }
 
         &:first-child {

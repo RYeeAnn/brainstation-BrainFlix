@@ -6,7 +6,7 @@ import Comments from '../components/Comments/Comments';
 import Videos from '../components/Videos/Videos';
 import axios from "axios";
 import { useState, useEffect } from 'react';
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
   // function clickHandler(videoId) {
   //   const video = videoDetails.find((video) => video.id === videoId);

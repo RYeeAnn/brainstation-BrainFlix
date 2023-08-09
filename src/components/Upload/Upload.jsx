@@ -1,8 +1,50 @@
 import "./Upload.scss";
 import { Link } from "react-router-dom";
 import thumbnail from "../../assets/Images/Upload-video-preview.jpg";
+import axios from "axios";
+import { useState } from "react";
 
 function Upload() {
+  const API_URL = process.env.REACT_APP_API_URL;
+  console.log("Upload API_URL", API_URL);
+
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [videoFile, setVideoFile] = useState(null);
+
+  const handleTitleChange = (event) => {
+    setTitle(event.target.value);
+  };
+
+  const handleDescriptionChange = (event) => {
+    setDescription(event.target.value);
+  };
+
+  const handleFileChange = (event) => {
+    setVideoFile(event.target.files[0]);
+  };
+
+  const handleUpload = async () => {
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("videoFile", videoFile);
+
+    try {
+      await axios.post(`${API_URL}/videos`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      // Handle success, e.g., show a success message or redirect
+      console.log("Video uploaded successfully");
+    } catch (error) {
+      // Handle error, e.g., display an error message
+      console.error("Error uploading video:", error);
+    }
+  };
+  
+
   return (
     <>
     <div className="upload__twoContainers">

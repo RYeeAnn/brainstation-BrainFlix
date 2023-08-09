@@ -44,7 +44,7 @@ function HomePage() {
         setVideos(response.data);
         setLoading(false);
 
-        console.log('AXIOS VIDEOS', response.data)
+        // console.log('AXIOS VIDEOS', response.data)
         getVideo(response.data[0].id)
 
 
@@ -60,7 +60,7 @@ function HomePage() {
     axios
       .get(`https://project-2-api.herokuapp.com/videos/${id}${api_key}`)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setSelectedVideo(response.data);
         setLoading(false);
       })

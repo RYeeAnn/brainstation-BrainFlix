@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const api_key = '?api_key=b500e183-5e41-4884-ad8e-f7190a88b1c8';
+const API_URL = process.env.REACT_APP_API_SERVER;
+console.log("API_URL", API_URL);
 
 function Video({ id, title, channel, image }) {
 
@@ -26,6 +28,16 @@ function Videos({ selectedVideo }) {
   useEffect(() => {
     getVideoData();
   }, [selectedVideo]);
+
+  useEffect(() => {
+    axios
+      .get(`${API_URL}/videos`)
+      .then((response) => {
+        console.log("Ryan's API", response.data);
+        setVideoList(response.data);
+      })
+      .catch((err) => console.error(err));
+  }, []);
   
 
   function getVideoData() {
@@ -52,9 +64,7 @@ function Videos({ selectedVideo }) {
       <div className="videos__container">
         <div className="videos__header">NEXT VIDEOS</div>
         <div className="videos__card">
-          {videoList
-            .filter((video) => selectedVideo.id !== video.id)
-            .map((video) => (
+          {videoList.filter((video) => selectedVideo.id !== video.id).map((video) => (
               <Video
                 key={video.id}
                 id={video.id}

@@ -15,6 +15,8 @@ import { useParams } from "react-router-dom";
 
 
 const api_key = '?api_key=b500e183-5e41-4884-ad8e-f7190a88b1c8';
+const API_URL = process.env.REACT_APP_API_SERVER;
+  console.log("HomePage API_URL", API_URL);
 
 
 function HomePage() {
@@ -36,7 +38,7 @@ function HomePage() {
 
   function getVideos() {
     axios
-      .get(`https://project-2-api.herokuapp.com/videos/${api_key}`)
+      .get(`${API_URL}/videos`)
       .then((response) => {
 
 
@@ -58,7 +60,7 @@ function HomePage() {
 
   function getVideo(id) {
     axios
-      .get(`https://project-2-api.herokuapp.com/videos/${id}${api_key}`)
+      .get(`${API_URL}/videos/${id}`)
       .then((response) => {
         // console.log(response.data);
         setSelectedVideo(response.data);

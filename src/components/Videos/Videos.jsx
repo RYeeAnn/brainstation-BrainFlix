@@ -3,7 +3,7 @@ import './Videos.scss';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-const api_key = '?api_key=b500e183-5e41-4884-ad8e-f7190a88b1c8';
+// const api_key = '?api_key=b500e183-5e41-4884-ad8e-f7190a88b1c8';
 const API_URL = process.env.REACT_APP_API_SERVER;
 console.log("API_URL", API_URL);
 
@@ -42,7 +42,7 @@ function Videos({ selectedVideo }) {
 
   function getVideoData() {
     axios
-    .get(`https://project-2-api.herokuapp.com/videos/${api_key}`)
+    .get(`${API_URL}/videos`)
     .then((response) => {
       setVideoList(response.data);
     })

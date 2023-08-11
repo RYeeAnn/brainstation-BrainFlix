@@ -3,6 +3,8 @@ import viewsLogo from '../../assets/Icons/views.svg';
 import likesLogo from '../../assets/Icons/likes.svg';
 
 const api_key = '?api_key=b500e183-5e41-4884-ad8e-f7190a88b1c8';
+const API_URL = process.env.REACT_APP_API_SERVER;
+    console.log("main API_URL", API_URL);
 
 
 function Main ({selectedVideo}) {

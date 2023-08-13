@@ -79,7 +79,7 @@ function HomePage() {
     <>
       <Header />
       <Main selectedVideo={selectedVideo} />
-      <Conversation selectedVideo={selectedVideo} />
+      <Conversation selectedVideo={selectedVideo}/>
       <Comments selectedVideo={selectedVideo} />
       <Videos selectedVideo={selectedVideo} /*clickHandler={clickHandler}*/ />
     </>

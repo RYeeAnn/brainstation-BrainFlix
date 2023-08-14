@@ -7,6 +7,11 @@ import axios from 'axios';
 const API_URL = process.env.REACT_APP_API_SERVER;
 console.log("API_URL", API_URL);
 
+
+
+
+
+
 function Video({ id, title, channel, image }) {
 
   return (
@@ -21,6 +26,11 @@ function Video({ id, title, channel, image }) {
     </Link>
   );
 }
+
+
+
+
+
 
 function Videos({ selectedVideo }) {
   const [videoList, setVideoList] = useState([]);
@@ -38,6 +48,10 @@ function Videos({ selectedVideo }) {
       })
       .catch((err) => console.error(err));
   }, []);
+
+
+
+
   
 
   function getVideoData() {
@@ -58,6 +72,11 @@ function Videos({ selectedVideo }) {
       behavior: 'auto',
     });
   }, [selectedVideo]);
+
+
+
+
+
 
   return (
     <section className="videos">

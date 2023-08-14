@@ -7,6 +7,10 @@ const API_URL = process.env.REACT_APP_API_SERVER;
     console.log("main API_URL", API_URL);
 
 
+
+
+
+
 function Main ({selectedVideo}) {
 
     // function for current timestamp -------------------------------------------------------
@@ -17,6 +21,11 @@ function Main ({selectedVideo}) {
         const year = date.getFullYear();
         return `${month}/${day}/${year}`;
       };
+
+
+
+
+      
 
     return (
     <>

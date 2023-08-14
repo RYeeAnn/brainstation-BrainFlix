@@ -1,6 +1,10 @@
 import './Comments.scss';
 import React, { useState, useEffect } from 'react';
 
+
+
+
+// Real-time date
 function Comments({ selectedVideo }) {
   const [currentDate, setCurrentDate] = useState(new Date());
 
@@ -33,6 +37,11 @@ function Comments({ selectedVideo }) {
     }
   };
 
+
+
+
+
+
   return (
     <section className="comments">
       <div className="comments__container">
@@ -44,7 +53,7 @@ function Comments({ selectedVideo }) {
                 <div className="comments__name">{comment.name}</div>
                 <div className="comments__date">{formatDate(comment.timestamp)}</div>
               </div>
-              <div className="comments__text">{comment.comment}</div>
+              <div className="comments__text">{comment.comment}{comment.text}</div>
             </div>
           </div>
         ))}
@@ -58,45 +67,3 @@ export default Comments;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import './Comments.scss';
-// import React from 'react';
-// import videoDetails from '../../assets/Data/video-details.json';
-
-// function Comments({ selectedVideo }) {
-//     return (
-//       <section className="comments">
-//         <div className="comments__container">
-//           {selectedVideo.comments.map((comment) => (
-//             <div key={comment.id} className="comments__row">
-//               <div className="comments__image"/>
-//             <div className="comments__items">
-//                 <div className="comments__namedate">
-//                     <div className="comments__name">{comment.name}</div>
-//                     <div className="comments__date">{comment.timestamp}</div>
-//                 </div>
-//               <div className="comments__text">{comment.comment}</div>
-//             </div>
-//             </div>
-//           ))}
-//         </div>
-//       </section>
-//     );
-//   }
-  
-  
-//   export default Comments;

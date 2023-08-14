@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './Conversation.scss';
 import Image from '../../assets/Images/Mohan-muruge.jpg';
+import axios from 'axios'; 
 import { v4 as uuid } from 'uuid';
 
+const API_URL = process.env.REACT_APP_API_SERVER;
 function Conversation({ selectedVideo }) {
   const [newComment, setNewComment] = useState('');
 
@@ -11,7 +13,7 @@ function Conversation({ selectedVideo }) {
   };
 
   const handleCommentSubmit = (event) => {
-    event.preventDefault(); // prevents refreshing
+    event.preventDefault(); // Prevents refreshing
     const newCommentObject = {
       id: uuid(),
       name: "User",
@@ -19,12 +21,24 @@ function Conversation({ selectedVideo }) {
       likes: "0",
       timestamp: Date.now(),
     };
-    console.log(newCommentObject)
 
+    // Update state with the new comment
     selectedVideo.comments.unshift(newCommentObject);
+    setNewComment('');
 
-    setNewComment(''); // clears textarea after submitting
+    // Send the new comment to the backend
+    axios.post(`${API_URL}/comments`, { comment: newCommentObject.text })
+      .then((response) => {
+        console.log('Comment posted successfully:', response.data);
+      })
+      .catch((error) => {
+        console.error('Error posting comment:', error);
+      });
   };
+
+
+
+  
 
   return (
     <section className="conversation">

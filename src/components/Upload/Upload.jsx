@@ -6,6 +6,11 @@ import { useEffect, useState } from "react";
 import { toast } from 'react-toastify'; // Notification from upload page for catching successful or error in posting
 import 'react-toastify/dist/ReactToastify.css';
 
+
+
+
+
+
 function Upload() {
 
   const API_URL = process.env.REACT_APP_API_SERVER;
@@ -48,6 +53,10 @@ function Upload() {
 
   };
 
+
+
+
+  
 
   return (
     <>

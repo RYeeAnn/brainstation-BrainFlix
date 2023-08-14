@@ -10,7 +10,7 @@ console.log("API_URL", API_URL);
 function Video({ id, title, channel, image }) {
 
   return (
-    <Link to={`/videos/${id}`}>
+    <Link to={`/videos/${id}`} className='custom-link'>
       <div className="videos__row">
         <img src={image} alt="thumbnail" className="videos__image" />
         <div className="videos__info">

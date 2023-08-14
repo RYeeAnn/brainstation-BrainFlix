@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import thumbnail from "../../assets/Images/Upload-video-preview.jpg";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { toast } from 'react-toastify'; // Notification from upload page for catching successful or error in posting
+import 'react-toastify/dist/ReactToastify.css';
 
 function Upload() {
 
@@ -22,12 +24,22 @@ function Upload() {
   });
 
   const handleUpload = async () => {
+
+    // This essentially replaces "required" and gives an error notif when the title and description are not filled
+    if(!title || !description) {
+      toast.error('Please provide both title and description');
+      return;
+
+    }
     axios
       .post(`${API_URL}/videos`, {
         title:title,
         description:description
       })
       .then(() => {
+        toast.success('Video Uploaded Successfully', {
+          position: toast.POSITION.TOP_RIGHT, /* Notification will appear top right of page */
+        });
         console.log('Posted Successfully!')
       })
       .catch((err) => {
@@ -64,6 +76,7 @@ function Upload() {
             type="text"
             placeholder="Add a title to your video"
             className="uploadText__input"
+            required
             onChange={titleHandle}
           />
           <div className="uploadText__title">ADD A VIDEO DESCRIPTION</div>
@@ -74,6 +87,7 @@ function Upload() {
             rows="10"
             placeholder="Add a description to your video"
             className="uploadText__textarea"
+            required
             onChange={descriptionHandle}
           ></textarea>
         </div>
